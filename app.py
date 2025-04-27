@@ -29,10 +29,8 @@ async def upload_image(file: UploadFile):
 
     # Read the file content
     image_bytes = await file.read()
-
     # Convert bytes to a PIL Image
     image = Image.open(io.BytesIO(image_bytes))
-
     # Perform OCR using pytesseract
     text = pytesseract.image_to_string(image)
 
